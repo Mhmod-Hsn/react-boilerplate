@@ -7,11 +7,12 @@ import {
 import { Outlet } from "react-router-dom";
 import { BlankLayout } from "../components/layout/BlankLayout";
 import { DashboardLayout } from "../components/layout/DashboardLayout";
+import { TodosDemo } from "../components/TodosDemo";
+import { ZodFormExample } from "../components/ZodFormExample";
 import { AnalyticsPanel } from "../features/analytics/AnalyticsPanel";
 import { DashboardPanel } from "../features/dashboard/DashboardPanel";
 import { FormsPanel } from "../features/forms/FormsPanel";
 import { SettingsPanel } from "../features/settings/SettingsPanel";
-import { ZodFormExample } from "../components/ZodFormExample";
 
 export interface RouteConfig {
 	path?: string;
@@ -56,6 +57,12 @@ export const routes: RouteConfig[] = [
 				label: "Zod Form",
 				icon: IconUser,
 				element: <ZodFormExample />,
+			},
+			{
+				path: "query-demo",
+				label: "Query Demo",
+				icon: IconArchive,
+				element: <TodosDemo />,
 			},
 		],
 	},

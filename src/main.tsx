@@ -10,15 +10,21 @@ import { theme } from "./styles/theme.ts";
 
 // Mantine Styles
 // Mantine CSS imports moved to index.css for precedence control
-import "./index.css";
+import "./styles/index.css";
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
-		<MantineProvider theme={theme} forceColorScheme="dark">
-			<Notifications />
-			<ModalsProvider>
-				<App />
-			</ModalsProvider>
-		</MantineProvider>
+		<QueryClientProvider client={queryClient}>
+			<MantineProvider theme={theme} forceColorScheme="dark">
+				<Notifications />
+				<ModalsProvider>
+					<App />
+				</ModalsProvider>
+			</MantineProvider>
+		</QueryClientProvider>
 	</React.StrictMode>
 );

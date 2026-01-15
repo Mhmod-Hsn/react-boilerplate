@@ -1,14 +1,15 @@
-import {
-    Code,
-    Group,
-    Paper,
-    Slider,
-    Switch,
-    Text,
-    Title,
-} from "@mantine/core";
+import { Code, Group, Paper, Slider, Switch, Text, Title } from "@mantine/core";
+import { useState } from "react";
 
 export function SettingsPanel() {
+	const [darkMode, setDarkMode] = useState(false);
+	const toggleDarkMode = () => setDarkMode((prev) => !prev);
+
+	const [notifications, setNotifications] = useState(true);
+	const toggleNotifications = () => setNotifications((prev) => !prev);
+
+	const [volume, setVolume] = useState(40);
+
 	return (
 		<Paper shadow="sm" radius="md" p="xl" withBorder>
 			<Title order={3} mb="md">
@@ -22,7 +23,13 @@ export function SettingsPanel() {
 							Switch between light and dark themes
 						</Text>
 					</div>
-					<Switch size="lg" onLabel="ON" offLabel="OFF" />
+					<Switch
+						size="lg"
+						onLabel="ON"
+						offLabel="OFF"
+						checked={darkMode}
+						onChange={toggleDarkMode}
+					/>
 				</Group>
 
 				<Group justify="space-between">
@@ -32,7 +39,12 @@ export function SettingsPanel() {
 							Receive digest emails weekly
 						</Text>
 					</div>
-					<Switch size="lg" defaultChecked />
+					<Switch
+						size="lg"
+						defaultChecked
+						checked={notifications}
+						onChange={toggleNotifications}
+					/>
 				</Group>
 
 				<div>
@@ -40,7 +52,8 @@ export function SettingsPanel() {
 						Volume Control
 					</Text>
 					<Slider
-						defaultValue={40}
+						value={volume}
+						onChange={(value) => setVolume(value)}
 						marks={[
 							{ value: 20, label: "20%" },
 							{ value: 50, label: "50%" },
@@ -50,12 +63,14 @@ export function SettingsPanel() {
 				</div>
 
 				<div className="pt-4 border-t border-gray-100">
-					<Code block>{`// Configuration (JSON)
+					<Code block lang="json">
+						{`// Configuration (JSON)
 {
-  "theme": "light",
-  "notifications": true,
-  "volume": 0.4
-}`}</Code>
+  "theme": ${darkMode ? "dark" : "light"},
+  "notifications": ${notifications ? "true" : "false"},
+  "volume": ${volume}
+}`}
+					</Code>
 				</div>
 			</div>
 		</Paper>
