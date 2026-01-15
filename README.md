@@ -1,73 +1,65 @@
-# React + TypeScript + Vite
+# Vite + React + TypeScript + Tailwind v4 + Mantine Boilerplate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern, opinionated boilerplate for building production-ready React applications. It combines the speed of Vite, the utility of Tailwind CSS v4, and the robust component library of Mantine.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/) (v6 for compatibility)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**:
+  - [Tailwind CSS v4](https://tailwindcss.com/) (Alpha/Beta)
+  - [Mantine UI](https://mantine.dev/) (Full suite installed)
+- **Package Manager**: [pnpm](https://pnpm.io/)
 
-## React Compiler
+## 📦 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Tailwind CSS v4** configured with the new Vite plugin (`@tailwindcss/vite`).
+- **Mantine Provider** set up with all core styles and feature packages (Dates, Notifications, Charts, etc.).
+- **Clean Structure**: Boilerplate code removed, ready for new features.
+- **Type-Safe**: Full TypeScript configuration.
 
-## Expanding the ESLint configuration
+## 🛠️ Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js (Latest LTS recommended)
+- pnpm
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the development server:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm dev
 ```
+
+### Build
+
+Build for production:
+
+```bash
+pnpm run build
+```
+
+## 🧩 Included Mantine Packages
+
+- `@mantine/core`: Core components and hooks
+- `@mantine/hooks`: State and UI management hooks
+- `@mantine/dates`: Date pickers and calendars
+- `@mantine/notifications`: Notification system
+- `@mantine/charts`: Recharts-based charts components
+- `@mantine/modals`: Centralized modal management
+- `@mantine/spotlight`: Overlay search (Cmd+K)
+- And more (`tiptap`, `carousel`, `dropzone`...)
+
+## 📝 Notes
+
+- **Tailwind v4**: This project uses the latest Tailwind CSS v4. Configuration is primarily handled in CSS (`@import "tailwindcss";`) and `vite.config.ts`, rather than `tailwind.config.js`.
+- **Mantine**: Use Mantine components for complex interactive UI elements and Tailwind for layout and atomic styling. They work great together!
