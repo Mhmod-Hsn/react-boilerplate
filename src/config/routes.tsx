@@ -11,6 +11,7 @@ import { AnalyticsPanel } from "../features/analytics/AnalyticsPanel";
 import { DashboardPanel } from "../features/dashboard/DashboardPanel";
 import { FormsPanel } from "../features/forms/FormsPanel";
 import { SettingsPanel } from "../features/settings/SettingsPanel";
+import { ZodFormExample } from "../components/ZodFormExample";
 
 export interface RouteConfig {
 	path?: string;
@@ -49,6 +50,12 @@ export const routes: RouteConfig[] = [
 				label: "Settings",
 				icon: IconSettings,
 				element: <SettingsPanel />,
+			},
+			{
+				path: "zod-form",
+				label: "Zod Form",
+				icon: IconUser,
+				element: <ZodFormExample />,
 			},
 		],
 	},
