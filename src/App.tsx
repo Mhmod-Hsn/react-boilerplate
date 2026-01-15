@@ -20,8 +20,14 @@ function App() {
 				<Text className="font-black text-4xl">Black 900 (Tailwind Class)</Text>
 				<Text>
 					ولما كان تناسي حقوق الإنسان وازدراؤها قد أفضيا إلى أعمال همجية
-        </Text>
-        <Button variant="outline">Button</Button>
+				</Text>
+				<div className="flex gap-2">
+					<Button variant="filled" color="blue">
+						Button
+					</Button>
+					<Button variant="outline">Button</Button>
+					<Button>Button</Button>
+				</div>
 			</div>
 		</Container>
 	);

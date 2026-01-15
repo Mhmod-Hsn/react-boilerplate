@@ -1,4 +1,4 @@
-@layer mantine, tailwind-base, tailwind-components, tailwind-utilities;
+@layer base, mantine, components, utilities;
 
 @import "@mantine/core/styles.layer.css";
 @import "@mantine/carousel/styles.layer.css";
