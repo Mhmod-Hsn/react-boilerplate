@@ -14,12 +14,10 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
-		<MantineProvider theme={theme}>
+		<MantineProvider theme={theme} forceColorScheme="dark">
 			<Notifications />
 			<ModalsProvider>
-				<div>
-					<App />
-				</div>
+				<App />
 			</ModalsProvider>
 		</MantineProvider>
 	</React.StrictMode>

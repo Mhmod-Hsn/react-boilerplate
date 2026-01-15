@@ -32,4 +32,16 @@ export const theme = createTheme({
 		primary,
 		secondary,
 	},
+	// components: {
+	// 	Paper: {
+	// 		classNames: {
+	// 			root: "dark:bg-neutral--900 dark:text-white dark:border-gray-800",
+	// 		}
+	// 	},
+	// 	Input: {
+	// 		classNames: {
+	// 			root: "dark:bg-neutral--900 dark:text-white dark:border-gray-800",
+	// 		}
+	// 	}
+	// }
 });

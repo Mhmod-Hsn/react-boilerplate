@@ -42,7 +42,7 @@ export function AnalyticsPanel() {
 				<Paper
 					p="md"
 					radius="md"
-					className="bg-gray-50 border border-gray-100 text-center"
+					className="bg-neutral--50 border border-gray-100 text-center"
 				>
 					<Text size="xs" c="dimmed" tt="uppercase" fw={700}>
 						Total Visits
@@ -54,7 +54,7 @@ export function AnalyticsPanel() {
 				<Paper
 					p="md"
 					radius="md"
-					className="bg-gray-50 border border-gray-100 text-center"
+					className="bg-neutral--50 border border-gray-100 text-center"
 				>
 					<Text size="xs" c="dimmed" tt="uppercase" fw={700}>
 						Bounce Rate
@@ -66,7 +66,7 @@ export function AnalyticsPanel() {
 				<Paper
 					p="md"
 					radius="md"
-					className="bg-gray-50 border border-gray-100 text-center"
+					className="bg-neutral--50 border border-gray-100 text-center"
 				>
 					<Text size="xs" c="dimmed" tt="uppercase" fw={700}>
 						Avg. Session

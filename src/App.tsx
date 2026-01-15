@@ -21,11 +21,13 @@ const renderRoutes = (routes: RouteConfig[]) => {
 
 export default function App() {
 	return (
-		<BrowserRouter>
-			<Routes>
-				{renderRoutes(routes)}
-				<Route path="*" element={<Navigate to="/" replace />} />
-			</Routes>
-		</BrowserRouter>
+		<div className="dark:bg-neutral--900 dark:text-white h-screen overflow-auto">
+			<BrowserRouter>
+				<Routes>
+					{renderRoutes(routes)}
+					<Route path="*" element={<Navigate to="/" replace />} />
+				</Routes>
+			</BrowserRouter>
+		</div>
 	);
 }

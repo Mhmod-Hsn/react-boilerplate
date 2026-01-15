@@ -54,11 +54,7 @@ export function FormsPanel() {
 					<NumberInput label="Age" defaultValue={25} mb="md" />
 				</Grid.Col>
 				<Grid.Col span={6}>
-					<DatePickerInput
-						label="Join Date"
-						placeholder="Pick date"
-						mb="md"
-					/>
+					<DatePickerInput label="Join Date" placeholder="Pick date" mb="md" />
 				</Grid.Col>
 				<Grid.Col span={12}>
 					<Text size="sm" fw={500} mb={4}>
@@ -80,7 +76,7 @@ export function FormsPanel() {
 						align="center"
 						mt="md"
 						p="md"
-						className="bg-gray-50 rounded-lg border border-gray-100"
+						className="bg-neutral--50 rounded-lg border border-gray-100"
 					>
 						<div>
 							<Text fw={500}>Dangerous Area</Text>

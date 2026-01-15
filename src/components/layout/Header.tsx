@@ -17,7 +17,7 @@ export function Header() {
 	};
 
 	return (
-		<div className="flex justify-between items-center mb-10 border-b border-gray-200 pb-4">
+		<div className="flex flex-col sm:flex-row gap-y-4 justify-between items-center mb-10 border-b border-gray-200 dark:border-gray-800 py-4">
 			<div>
 				<Title
 					order={1}
