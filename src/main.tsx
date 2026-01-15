@@ -2,24 +2,18 @@ import { MantineProvider } from "@mantine/core";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import "./index.css";
+import { theme } from "./styles/theme.ts";
 
 // Mantine Styles
-import "@mantine/carousel/styles.css";
-import "@mantine/charts/styles.css";
-import "@mantine/code-highlight/styles.css";
-import "@mantine/core/styles.css";
-import "@mantine/dates/styles.css";
-import "@mantine/dropzone/styles.css";
-import "@mantine/notifications/styles.css";
-import "@mantine/nprogress/styles.css";
-import "@mantine/spotlight/styles.css";
-import "@mantine/tiptap/styles.css";
+// Mantine CSS imports moved to index.css for precedence control
+import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
-		<MantineProvider>
-			<App />
+		<MantineProvider theme={theme}>
+			<div className="dark:bg-gray-900 dark:text-gray-100 dark:border-gray-800 dark:border h-screen overflow-auto">
+				<App />
+			</div>
 		</MantineProvider>
 	</React.StrictMode>
 );
