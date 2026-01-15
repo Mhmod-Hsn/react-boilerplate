@@ -1,36 +1,31 @@
-import { Button, Container, Text } from "@mantine/core";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { routes, type RouteConfig } from "./config/routes";
 
-function App() {
+const renderRoutes = (routes: RouteConfig[]) => {
+	return routes.map((route, index) => {
+		const { children, ...rest } = route;
+
+		// TS Discriminates between PathRouteProps and LayoutRouteProps/IndexRouteProps
+		// We need to cast or split. Spreading is convenient but strict.
+		if (route.index) {
+			return <Route key={index} index element={route.element} />;
+		}
+
+		return (
+			<Route key={index} path={rest.path} element={rest.element}>
+				{children && renderRoutes(children)}
+			</Route>
+		);
+	});
+};
+
+export default function App() {
 	return (
-		<Container size="lg" className="p-4 md:p-10 ">
-			<Text className="font-extrabold text-3xl text-primary-600">
-				Hello World (Zain Font)
-			</Text>
-			<Text className="font-bold text-xl text-secondary-600">
-				Secondary Color Test
-			</Text>
-			<div className="mt-4 space-y-2">
-				<Text fw={300} className="text-xl">
-					Light 300 (Mantine Prop)
-				</Text>
-				<Text className="font-light text-xl">Light 300 (Tailwind Class)</Text>
-				<Text fw={900} className="text-4xl">
-					Black 900 (Mantine Prop)
-				</Text>
-				<Text className="font-black text-4xl">Black 900 (Tailwind Class)</Text>
-				<Text>
-					ولما كان تناسي حقوق الإنسان وازدراؤها قد أفضيا إلى أعمال همجية
-				</Text>
-				<div className="flex gap-2">
-					<Button variant="filled" color="blue">
-						Button
-					</Button>
-					<Button variant="outline">Button</Button>
-					<Button>Button</Button>
-				</div>
-			</div>
-		</Container>
+		<BrowserRouter>
+			<Routes>
+				{renderRoutes(routes)}
+				<Route path="*" element={<Navigate to="/" replace />} />
+			</Routes>
+		</BrowserRouter>
 	);
 }
-
-export default App;
