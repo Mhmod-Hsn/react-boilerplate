@@ -31,7 +31,7 @@ export function FormsPanel() {
 	};
 
 	return (
-		<Paper shadow="sm" radius="md" p="xl" withBorder>
+		<Paper >
 			<Title order={3} mb="lg">
 				User Settings Form
 			</Title>

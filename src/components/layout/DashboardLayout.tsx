@@ -8,7 +8,7 @@ export function DashboardLayout() {
 		<>
 			<Header />
 			<Container>
-				<Flex className="flex-col md:flex-row">
+				<Flex className="flex-col md:flex-row gap-4">
 					{/* Sidebar / Navigation */}
 					<div className="w-full md:w-72">
 						<Sidebar />

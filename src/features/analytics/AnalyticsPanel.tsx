@@ -19,7 +19,7 @@ const chartData = [
 
 export function AnalyticsPanel() {
 	return (
-		<Paper shadow="sm" radius="md" p="xl" withBorder>
+		<Paper >
 			<Group justify="space-between" mb="lg">
 				<Title order={3}>Performance Analytics</Title>
 				<Select

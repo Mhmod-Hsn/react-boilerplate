@@ -1,4 +1,4 @@
-import { createTheme, type MantineColorsTuple } from "@mantine/core";
+import { createTheme, Paper, type MantineColorsTuple } from "@mantine/core";
 
 const primary: MantineColorsTuple = [
 	"#f0fdfa",
@@ -32,16 +32,13 @@ export const theme = createTheme({
 		primary,
 		secondary,
 	},
-	// components: {
-	// 	Paper: {
-	// 		classNames: {
-	// 			root: "dark:bg-neutral--900 dark:text-white dark:border-gray-800",
-	// 		}
-	// 	},
-	// 	Input: {
-	// 		classNames: {
-	// 			root: "dark:bg-neutral--900 dark:text-white dark:border-gray-800",
-	// 		}
-	// 	}
-	// }
+	components: {
+		Paper: Paper.extend({
+			defaultProps: {
+				shadow: "sm",
+				radius: "md",
+				withBorder: true,
+			},
+		}),
+	},
 });

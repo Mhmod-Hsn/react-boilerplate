@@ -11,7 +11,7 @@ export function SettingsPanel() {
 	const [volume, setVolume] = useState(40);
 
 	return (
-		<Paper shadow="sm" radius="md" p="xl" withBorder>
+		<Paper >
 			<Title order={3} mb="md">
 				Application Preferences
 			</Title>
